@@ -20,5 +20,4 @@ class PageRole extends AppModel{
             'name'=>'UserGoups',                      
         ),        
     ); 
-    
 }
