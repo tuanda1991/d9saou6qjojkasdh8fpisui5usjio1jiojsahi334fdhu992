@@ -1,7 +1,7 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Description PageRole Model is a model content all page of project
+ * Description User Model is a model content all common values of project
  * 
  * @author doanhtuan1991@gmail.com
  * @copyright     never
@@ -11,14 +11,6 @@ App::uses('AppModel', 'Model');
  * @since         BasicCakePHP v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class PageRole extends AppModel{
-    public $values= array(
-        '1'=> array(
-            'Name'=>'user_list',            
-        ),
-        '2'=> array(
-            'Name'=>'user_group_list',            
-        ),
-    ); 
+class User extends AppModel {
     
 }
