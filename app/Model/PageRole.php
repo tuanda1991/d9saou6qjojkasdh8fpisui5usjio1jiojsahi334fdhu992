@@ -14,11 +14,11 @@ App::uses('AppModel', 'Model');
 class PageRole extends AppModel{
     public $values= array(
         '1'=> array(
-            'Name'=>'user_list',            
+            'name'=>'Users',            
         ),
         '2'=> array(
-            'Name'=>'user_group_list',            
-        ),
+            'name'=>'UserGoups',                      
+        ),        
     ); 
     
 }
