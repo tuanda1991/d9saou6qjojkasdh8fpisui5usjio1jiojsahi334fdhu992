@@ -14,14 +14,64 @@ App::uses('AppModel', 'Model');
 
 class Common extends AppModel{
     
-    public $useTable=false;    
+    // <editor-fold defaultstate="collapsed" desc="common variable">
+    
+    /**
+     * this mean is model don't use any real table in database.
+     * 
+     * @var boolean 
+     */
+    public $useTable=false; 
+    
+    /**
+     * pageVals was used for render table, action of page
+     * 
+     * @var Distionary 
+     */
+    public $pageVals=array(
+            'DailyChances'=> array(
+                        'pageName'=> 'デイリーチャンス',
+                        'validation'=> '/daily_chances/checkData',
+                        'dialog'=>array(
+                            'add'=>'Add質問',
+                            'edit'=>'Edit質問',
+                            'search'=>'検索'
+                        ),
+                        'button'=>array(
+                            'add'=> '/daily_chances/add/',
+                            'search'=> '/daily_chances/search/',
+//                            'copy'=> '/daily_chances/search/',
+                            'edit'=> '/daily_chances/edit/',
+                            'delete'=> '/daily_chances/delete/'
+                        ),
+                        'table'=>array(
+                            'title'=>'デイリーチャンス',
+                            'obj_name'=>'Question',
+                            'primary'=>'question_id',
+                            'fields'=>array(
+                                'question_id'=>array('header' => 'ID','width'=>'5%'),
+                                'question'=>array('header' => '質問','width'=>'20%'),
+                                'sort_id'=>array('header' => 'ソートID','width'=>'5%'),
+                                'date'=>array('header' => '日時','width'=>'10%'),
+                                'point'=>array('header' => 'ポイント','width'=>'5%'),
+                                'answers'=>array('header' => '回答','width'=>'20%'),
+                                'created'=>array('header' => '更新日時','width'=>'10%'),
+                                'modified'=>array('header' => '作成日時','width'=>'10%'),
+                            )
+                        )        
+            ),        
+    );
+
+    //</editor-fold>
+    
+    // <editor-fold defaultstate="collapsed" desc="common function">
     
     public function __construct($id = false, $table = null, $ds = null) {
         parent::__construct($id, $table, $ds);
     }  
     
     /**
-     * this function used to get current url
+     * getCurrentURL used to get current url
      * 
      * @author doanhtuan1991@gmail.com
      * @param type $onlyRoot
@@ -60,6 +110,8 @@ class Common extends AppModel{
         }
         return '<a title="'.htmlentities($item).'" >'.substr(htmlentities($item), 0,$max)." (...)</a>";
     }
+    
+    //</editor-fold>
     
 }
 
