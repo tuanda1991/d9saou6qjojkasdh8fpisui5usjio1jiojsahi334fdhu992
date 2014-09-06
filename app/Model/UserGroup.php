@@ -12,7 +12,12 @@ App::uses('AppModel', 'Model');
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class UserGroup extends AppModel {
-    
+    /**
+     * $values is store all value of this object
+     * 
+     * @author doanhtuan1991@gmail.com
+     * @var array UserGroup 
+     */
     private $values=array(        
         array(
             'UserGroup'=>array(
@@ -27,22 +32,42 @@ class UserGroup extends AppModel {
             )           
         ),
     );
+    
+    /**
+     * 
+     * @param type $id
+     * @param type $table
+     * @param type $ds
+     */
     public function __construct($id = false, $table = null, $ds = null) {
         parent::__construct($id, $table, $ds);
     }
+    
     /**
      * all is a function use to get all object
      * 
+     * @author doanhtuan1991@gmail.com
      * @return array UserGroup
      */
     public function all(){
         return $this->values;
     }
+    
+    /**
+     * one is a function use to get a object have id = $id
+     * 
+     * @author doanhtuan1991@gmail.com
+     * @param int $id
+     * @return array
+     */
     public function one($id=0){
         if($id!=0){
             foreach ($this->values as $obj){
-                
-            }
+                if(@$obj['UserGroup']['id']==$id){
+                    return $obj;
+                }
+            }            
         }
+        return array();
     }
 }
