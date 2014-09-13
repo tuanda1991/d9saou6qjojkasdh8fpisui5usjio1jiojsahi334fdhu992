@@ -1,0 +1,103 @@
+
+
+msgid "login.title"
+msgstr "ĐĂNG NHẬP VÀO HỆ THỐNG"
+
+msgid "login.sologan"
+msgstr "Đăng nhập để có thể quản lý sản phẩm, quản lý đơn hàng, quản lý tin tức...cho website của bạn"
+
+
+msgid "Login"
+msgstr "Đăng Nhập"
+
+msgid "login.forgotPass"
+msgstr "Bạn không nhớ mật khẩu của mình?"
+
+msgid "Language"
+msgstr "Ngôn Ngữ"
+
+msgid "msgNotNull"
+msgstr "not NULL"
+
+msgid "msgNotValidate"
+msgstr "isn't Validate"
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+

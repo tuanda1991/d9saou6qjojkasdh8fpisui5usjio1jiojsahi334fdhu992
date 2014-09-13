@@ -1,0 +1,5 @@
+msgid "login.title"
+msgstr "SIGN IN TO SYSTEM"
+
+msgid "login.sologan"
+msgstr "Sign in order to manage Product, Orders, Customer feedback, News...for your website"

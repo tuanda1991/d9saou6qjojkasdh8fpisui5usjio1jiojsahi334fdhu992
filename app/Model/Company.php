@@ -18,10 +18,12 @@ class Company extends AppModel {
     public $useTable=false;
     
     public $values=array(
-        '1'=>array(            
-            'id' => 1,
-            'code' =>'fingerprint',
-            'name'=>'Fingerprint',            
+        '1'=>array(  
+            'Company'=>array(
+                'id' => 1,
+                'code' =>'fingerprint',
+                'name'=>'Fingerprint',            
+            )
         ),        
     );
     
@@ -44,7 +46,7 @@ class Company extends AppModel {
      */
     public function one($id=0){
         if($id!=0){            
-            return $values[$id];        
+            return $this->values[$id];        
         }
         return array();
     }

@@ -1,0 +1,60 @@
+/* 
+    Created on : Sep 7, 2014, 1:04:10 PM
+    Author     : AnhTuan
+*/
+
+﻿.logOnContent
+{
+    width:600px;
+    margin:50px auto;
+}
+.title
+{
+    font-family: segoe ui, arial, helvetica, sans-serif;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom:20px;   
+}
+.subTitle
+{
+    font-family: segoe ui, arial, helvetica, sans-serif;
+    text-align: center;
+    font-size:13px;
+    line-height: 17px;
+    margin: 0 0 1em;
+}
+.boxLogon
+{
+    width:300px;
+    margin:27px auto;
+    padding:25px;
+    border:1px #ddd solid;
+}
+.FormTitle
+{
+    line-height:17px;
+    font-size:19px;
+    margin-bottom:15px;
+}
+.logOnMore
+{
+    margin-top:10px;
+}
+.err
+{
+    border:2px Orange solid;     
+}
+#validate
+{
+    margin-top:10px;
+}
+.errtext
+{
+    font-size:14px;
+    color:Red;  
+}
+.ddlLanguage{
+    padding: 4px;
+    width:272px;
+    margin-left: -5px;
+}

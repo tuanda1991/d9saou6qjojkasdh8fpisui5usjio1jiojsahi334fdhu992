@@ -34,27 +34,40 @@ class LoginController extends Controller{
         //Start change language
         if(!$this->Session->read('locale')&&$language==''){
             CakeSession::write('Config.language', $language);
-            $this->Session->write('locale',$this->Common->locale['default']);            
+            $this->Session->write('locale',$this->Common->locale['default']['id']);            
         }
-        else if($language!=''&&isset($this->Common->locale[$language])){
+        else if($language!=''&&isset($this->Common->locale[$language]['id'])){
             CakeSession::write('Config.language', $language);
             $this->Session->write('locale',$language);
         }
+        
         //end change language        
+        
         $this->autoLayout=FALSE;
         $this->Session->delete('User');
-        if ($this->request->is('post')) {
-                #print_r($this->request->data);exit;
-                $this->loadModel('AdminUser');
-                $userData = array();
-
+        
+        //set default code  
+        
+        $code=$this->Company->one(1);
+        $this->set('code',@$code['Company']['code']);
+        $this->set('lang',@$this->Session->read('locale'));
+        $this->set('lstLanguage', @$this->Common->locale);
+        
+        //Check login
+        
+        if ($this->request->is('post')) {                
                 // Validate data
-                $this->AdminUser->set($this->request->data);
-                $username = $this->request->data['AdminUser']['username'];
-                $userpass = $this->request->data['AdminUser']['password'];
+                $this->User->set($this->request->data);
+                $error=array();                
+                $txtCode = $this->request->data['txtCode'];
+                $txtEmail = $this->request->data['txtEmail'];
+                $txtPass = $this->request->data['txtPass'];
+                
+                
                 if (!$this->AdminUser->validates()) {
                         $this->errorMsg = $this->AdminUser->validationErrors;
-                }else{
+                }
+                else{
                         // Check login
                         $userData = $this->checkAdminLog($username, $userpass);
                         if ($userData) {
@@ -73,18 +86,13 @@ class LoginController extends Controller{
                         }
                 }
         }	
-        //set default code  
-        $code=$this->Company->one(1);
-        $this->set('code',@$code['Company']['code']);
-        $this->set('lang',@$this->Session->read('locale'));
+        
     }
 	
-    public function checkAdminLog($username, $userpass){
-            $conditions = array('AdminUser.username' => $username,
-            'AdminUser.password' => md5($userpass));
-            $this->loadModel('AdminUser');
-            return $this->AdminUser->find('first', array('conditions'=>$conditions));
-
+    public function checkAdminLog($username="", $userpass="",$code=""){
+            $conditions = array('User.username' => $username,
+            'User.password' => md5($userpass));            
+            return $this->User->find('first', array('conditions'=>$conditions));
     }
     public function logout(){
             $this->Session->delete('Admin');

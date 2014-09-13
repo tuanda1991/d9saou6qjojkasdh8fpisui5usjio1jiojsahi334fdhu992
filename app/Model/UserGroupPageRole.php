@@ -15,6 +15,8 @@ App::uses('AppModel', 'Model');
 
 class UserGroupPageRole {
     
+    public $useTable=false;
+    
     public $values= array(         
         array(
             'UserGroupPageRole'=> array(

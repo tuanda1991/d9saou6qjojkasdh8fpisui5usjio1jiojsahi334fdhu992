@@ -1,35 +1,19 @@
 <?php
-/**
- * Application level Controller
- *
- * This file is application-wide controller file. You can put all
- * application-wide controller-related methods here.
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Controller
- * @since         CakePHP(tm) v 0.2.9
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
 
 App::uses('Controller', 'Controller');
 
 /**
- * Application Controller
- *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
- *
- * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * AppController is a parent Controller of all others
+ * 
+ * @author doanhtuan1991@gmail.com
+ * @copyright     never
+ * @link          http://fingerprint.com.vn/
+ * @package       app.Controller
+ * @version       1.0
+ * @since         BasicCakePHP v 0.2.9
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 class AppController extends Controller {
     
     public $helpers = array('Html');
@@ -39,14 +23,20 @@ class AppController extends Controller {
         parent::__construct($request, $response);
     }
     
+    /**
+     * 
+     * beforeFilter is a function run before call action in all controller
+     * 
+     * @return void
+     */
     public function beforeFilter() { 
         parent::beforeFilter();        
      	// check login
-        if(!$this->Session->read('Admin')) {
-                $currenturl=$this->Common->getCurrentURL();                 
-                $this->Session->write('returnUrl',$currenturl);
-                if(!isset($this->request->query['ajax'])){
-                    return $this->redirect(array('controller'=>'web', 'action'=>'login'));
+        if(!$this->Session->read('Admin')) {                
+                if(!isset($this->request->query['ajax'])){                    
+                      $currenturl=$this->Common->getCurrentURL();                 
+                      $this->Session->write('returnUrl',$currenturl);
+                      return $this->redirect(array('controller'=>'login', 'action'=>'index'));                    
                 }
                 else $rs['error']="You must Re-Login!";
         }

@@ -14,11 +14,11 @@ App::uses('AppModel', 'Model');
 
 class Common extends AppModel{
     
-/**
-* this mean is model don't use any real table in database.
-* 
-* @var boolean 
-*/
+    /**
+    * this mean is model don't use any real table in database.
+    * 
+    * @var boolean 
+    */
     public $useTable=false; 
     
     public function __construct($id = false, $table = null, $ds = null){
@@ -26,43 +26,73 @@ class Common extends AppModel{
     }  
     
     // <editor-fold defaultstate="collapsed" desc="common variable">   
-    
+    /**
+     * $locale is a value use to multi Language
+     * 
+     * @var list 
+     */
+    public $locale=array(
+        'default'=>array( 
+            'id'=> 'vie',
+            'name' => 'default'
+        ),
+        'vie'=>array( 
+            'id'=> 'vie',
+            'name' => 'Vietnamese'
+        ),
+        'eng'=>array( 
+            'id'=> 'eng',
+            'name' => 'English'
+        ),
+    );
+    //@todo check validate for login
+    /**
+     *
+     * @var type 
+     */
+    public $loginValidate=array(
+        'txtCode'=>array('notNull','codeIsExist'),
+        'txtEmail'=>array('notNull','IsEmail'),
+        'txtPass'=>array('notNull')
+    );
+
+
     /**
      * pageVals was used for render table, action of page
      * 
      * @var Distionary 
      */
     public $pageVals=array(
-            'DailyChances'=> array(
-                        'pageName'=> 'デイリーチャンス',
-                        'validation'=> '/daily_chances/checkData',
-                        'dialog'=>array(
-                            'add'=>'Add質問',
-                            'edit'=>'Edit質問',
-                            'search'=>'検索'
-                        ),
-                        'button'=>array(
-                            'add'=> '/daily_chances/add/',
-                            'search'=> '/daily_chances/search/',
-//                            'copy'=> '/daily_chances/search/',
-                            'edit'=> '/daily_chances/edit/',
-                            'delete'=> '/daily_chances/delete/'
-                        ),
-                        'table'=>array(
-                            'title'=>'デイリーチャンス',
-                            'obj_name'=>'Question',
-                            'primary'=>'question_id',
-                            'fields'=>array(
-                                'question_id'=>array('header' => 'ID','width'=>'5%'),
-                                'question'=>array('header' => '質問','width'=>'20%'),
-                                'sort_id'=>array('header' => 'ソートID','width'=>'5%'),
-                                'date'=>array('header' => '日時','width'=>'10%'),
-                                'point'=>array('header' => 'ポイント','width'=>'5%'),
-                                'answers'=>array('header' => '回答','width'=>'20%'),
-                                'created'=>array('header' => '更新日時','width'=>'10%'),
-                                'modified'=>array('header' => '作成日時','width'=>'10%'),
-                            )
-                        )        
+            'Users'=> array(
+                    'pageName'=> 'Users List',
+                    'validation'=> '/users/checkData',
+                    'dialog'=>array(
+                        'add'=>'New User',
+                        'edit'=>'Edit User',
+                        'Filter'=>'Filter User'
+                    ),
+                    'button'=>array(
+                        'add'=> '/users/add/',
+                        'filter'=> '/users/filter/',
+                        'copy'=> '/users/copy/',
+                        'edit'=> '/users/edit/',
+                        'delete'=> '/users/delete/'
+                    ),
+                    'table'=>array(
+                        'title'=>'デイリーチャンス',
+                        'obj_name'=>'Question',
+                        'primary'=>'question_id',
+                        'fields'=>array(
+                            'question_id'=>array('header' => 'ID','width'=>'5%'),
+                            'question'=>array('header' => '質問','width'=>'20%'),
+                            'sort_id'=>array('header' => 'ソートID','width'=>'5%'),
+                            'date'=>array('header' => '日時','width'=>'10%'),
+                            'point'=>array('header' => 'ポイント','width'=>'5%'),
+                            'answers'=>array('header' => '回答','width'=>'20%'),
+                            'created'=>array('header' => '更新日時','width'=>'10%'),
+                            'modified'=>array('header' => '作成日時','width'=>'10%'),
+                        )
+                    )        
             ),        
     );
 

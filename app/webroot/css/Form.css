@@ -1,0 +1,26 @@
+﻿.txt
+{
+    border:1px #ddd solid;
+    padding:5px;
+    font: 14px arial, helvetica, sans-serif;
+}
+.label
+{
+    font: 13px arial, helvetica, sans-serif;
+    font-weight:bold;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.actionbutton
+{
+    margin-top:10px;
+}
+.btn
+{
+    background-color: #357ae8;
+    padding:7px 15px 7px 15px;
+    border:1px solid #2f5bb7;
+    color:White;
+    font-weight:bold;
+    cursor:pointer;
+}

@@ -12,6 +12,7 @@ App::uses('AppModel', 'Model');
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class PageRole extends AppModel{
+    public $useTable=false;
     public $values= array( 
         array(
             'PageRole'=> array(

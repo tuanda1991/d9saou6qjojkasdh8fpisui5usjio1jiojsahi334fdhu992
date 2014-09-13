@@ -12,6 +12,9 @@ App::uses('AppModel', 'Model');
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class UserGroup extends AppModel {
+    
+    public $useTable=false;
+    
     /**
      * $values is store all value of this object
      * 
@@ -19,13 +22,13 @@ class UserGroup extends AppModel {
      * @var array UserGroup 
      */
     private $values=array(        
-        array(
+        '1' => array(
             'UserGroup'=>array(
                 'id' => '1',
                 'name' => 'Admin' 
             )           
         ),
-        array(
+        '2' => array(
             'UserGroup'=>array(
                 'id' => '2',
                 'name' => 'Guests'
@@ -61,12 +64,8 @@ class UserGroup extends AppModel {
      * @return array
      */
     public function one($id=0){
-        if($id!=0){
-            foreach ($this->values as $obj){
-                if(@$obj['UserGroup']['id']==$id){
-                    return $obj;
-                }
-            }            
+        if($id!=0){            
+            return $values[$id];        
         }
         return array();
     }
