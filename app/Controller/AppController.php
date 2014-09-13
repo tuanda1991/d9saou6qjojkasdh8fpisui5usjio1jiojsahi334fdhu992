@@ -36,7 +36,7 @@ class AppController extends Controller {
                 if(!isset($this->request->query['ajax'])){                    
                       $currenturl=$this->Common->getCurrentURL();                 
                       $this->Session->write('returnUrl',$currenturl);
-                      return $this->redirect(array('controller'=>'login', 'action'=>'index'));                    
+//                      return $this->redirect(array('controller'=>'login', 'action'=>'index'));                    
                 }
                 else $rs['error']="You must Re-Login!";
         }
