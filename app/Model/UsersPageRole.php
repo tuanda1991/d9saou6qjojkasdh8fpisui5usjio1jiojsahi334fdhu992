@@ -17,7 +17,7 @@ class UsersPageRole extends AppModel {
 		'page_role_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'NOT_NUMERIC',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -27,7 +27,7 @@ class UsersPageRole extends AppModel {
 		'user_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'NOT_NUMERIC',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -37,7 +37,7 @@ class UsersPageRole extends AppModel {
 		'is_del' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'NOT_NUMERIC',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -47,7 +47,7 @@ class UsersPageRole extends AppModel {
 		'is_create' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'NOT_NUMERIC',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -57,7 +57,7 @@ class UsersPageRole extends AppModel {
 		'is_edit' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'NOT_NUMERIC',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -67,7 +67,7 @@ class UsersPageRole extends AppModel {
 		'is_view' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'NOT_NUMERIC',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -77,7 +77,7 @@ class UsersPageRole extends AppModel {
 		'is_export' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'NOT_NUMERIC',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -93,20 +93,20 @@ class UsersPageRole extends AppModel {
  *
  * @var array
  */
-	public $belongsTo = array(
-		'PageRole' => array(
-			'className' => 'PageRole',
-			'foreignKey' => 'page_role_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
+//	public $belongsTo = array(
+//		'PageRole' => array(
+//			'className' => 'PageRole',
+//			'foreignKey' => 'page_role_id',
+//			'conditions' => '',
+//			'fields' => '',
+//			'order' => ''
+//		),
+//		'User' => array(
+//			'className' => 'User',
+//			'foreignKey' => 'user_id',
+//			'conditions' => '',
+//			'fields' => '',
+//			'order' => ''
+//		)
+//	);
 }
